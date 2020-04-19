@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-//provider
 import '../providers/home_provider.dart';
-
-//pages
-import 'home_page.dart';
-import 'summery.dart';
-import 'loading_screen.dart';
-import 'credit_screen.dart';
-
-//widgets
 import '../widgets/navigation_bar.dart';
+import 'credit_screen.dart';
+import 'home_page.dart';
+import 'loading_screen.dart';
+import 'summery.dart';
 
 
 class RootPage extends StatefulWidget {
@@ -57,16 +52,17 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: isLoading ? LoadingScreen() : pages[currentPageIndex],
-      bottomNavigationBar: NavigationBar(
-        onTap: (int i){
-          setState(() {
-            currentPageIndex=i;
-          });
-        },
-        index: currentPageIndex
-      )
+        key: Key("RootPage"),
+        backgroundColor: Colors.white,
+        body: isLoading ? LoadingScreen() : pages[currentPageIndex],
+        bottomNavigationBar: NavigationBar(
+            onTap: (int i) {
+              setState(() {
+                currentPageIndex = i;
+              });
+            },
+            index: currentPageIndex
+        )
     );
   }
 }
