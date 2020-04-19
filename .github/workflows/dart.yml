@@ -19,6 +19,6 @@ jobs:
     - name: Install dependencies
       run: pub get
     - name: Flutter Deployment
-     uses: jeanluc243/Flutter-Deployment@0.1
+      uses: jeanluc243/Flutter-Deployment@0.1
     - name: Run tests
       run: pub run test
